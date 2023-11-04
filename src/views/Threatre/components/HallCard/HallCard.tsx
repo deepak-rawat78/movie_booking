@@ -13,8 +13,8 @@ interface Props {
 
 const HallCard = ({
   time = null,
-  theatreName = 'Cinetech',
-  hallName = 'Hall 1',
+  theatreName = '',
+  hallName = '',
   isSelected,
   onPress,
 }: Props) => {
