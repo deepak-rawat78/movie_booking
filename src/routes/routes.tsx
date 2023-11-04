@@ -2,7 +2,6 @@ import React from 'react';
 import SCREENS from './screens';
 import MediaLibrary from '../views/MediaLibrary/MediaLibrary';
 import More from '../views/More/More';
-import Watch from '../views/Watch/Watch';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Dashboard from '../views/Dashboard/Dashboard';
 import {Image} from 'react-native';
@@ -29,7 +28,7 @@ const tabBarOption = ({route}: {route: RouteProp<any>}) => ({
   headerShown: false,
   tabBarActiveTintColor: colors.white,
   tabBarLabelStyle: styles.tabBarLabelStyle,
-  tabBarStyle: styles.tabBarStyle,
+  tabBarStyle: [styles.tabBarStyle, {height: 100}],
   tabBarIcon: ({focused}: {focused: boolean}) => getTabBarIcon(route, focused),
 });
 

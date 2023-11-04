@@ -1,29 +1,29 @@
-import {View, Text, SafeAreaView, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView} from 'react-native';
 import React from 'react';
 import Chip from './components/chip/Chip';
 import colors from '../../assets/colors';
 import Heading from '../../components/Heading/Heading';
 import styles from './styles';
 import Strings from '../../utils/constants';
-import {
-  leftDirectionArrow,
-  playIcon,
-  whiteLeftDirectionArrow,
-} from '../../assets/png';
+import {playIcon, whiteLeftDirectionArrow} from '../../assets/png';
 import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import CustomButton from '../../components/CustomButton/CustomButton';
 
 interface Props {}
+
 type GENRESTYPE = {value: string; color: string};
+
 const description =
   "As a collection of history's worst tyrants and criminal masterminds gather to plot a war to wipe out millions, one man must race against time to stop them. Discover the origins of the very first independent intelligence agency in The King's Man. The Comic Book “The Secret Service” by Mark Millar and Dave Gibbons.";
+
 const genres: GENRESTYPE[] = [
   {value: Strings.ACTION, color: colors.green2},
   {value: Strings.THRILLER, color: colors.pink2},
   {value: Strings.SCIENCE, color: colors.purple2},
   {value: Strings.FICTION, color: colors.yellow2},
 ];
+
 const MovieDetail = ({}: Props) => {
   const {top} = useSafeAreaInsets();
   const renderGenre = (item: GENRESTYPE) => {
