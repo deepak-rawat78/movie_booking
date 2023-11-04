@@ -2,7 +2,6 @@ import React from 'react';
 import {View} from 'react-native';
 import styles from './styles';
 import NavHeader from '../../components/NavHeader/NavHeader';
-import DateSelection from '../Threatre/DateSelection';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {MOVIE_NAME} from '../Threatre/Threatre';

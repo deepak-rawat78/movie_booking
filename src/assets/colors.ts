@@ -8,11 +8,16 @@ const grey2 = '#8F8F8F';
 
 const green2 = '#15D2BC';
 const pink2 = '#E26CA5';
+
 const purple2 = '#564CA3';
+const purple3 = '#2E2739';
+
 const yellow2 = '#CD9D0F';
+
 const black = '#000000';
 const black2 = '#00000080';
 const black3 = '#00000000';
+const black4 = '#827D88';
 
 export default {
   blue,
@@ -29,4 +34,6 @@ export default {
   black,
   black2,
   black3,
+  purple3,
+  black4,
 };

@@ -1,12 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 const Dashboard = () => {
-  return (
-    <View>
-      <Text>fdskjfl</Text>
-    </View>
-  );
+  return <View></View>;
 };
 
 export default Dashboard;
