@@ -6,6 +6,7 @@ import More from '../views/More/More';
 import Watch from '../views/Watch/Watch';
 import Theatre from '../views/Threatre/Threatre';
 import SeatSelection from '../views/SelectSeat/SeatSelection';
+import MovieDetail from '../views/MovieDetail/MovieDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ const NavigatorRoutes = () => {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name={SCREENS.DASHBOARD} component={Theatre} />
+      <Stack.Screen name={SCREENS.DASHBOARD} component={MovieDetail} />
       <Stack.Screen name={SCREENS.THREATRE} component={Theatre} />
       <Stack.Screen name={SCREENS.SELECT_SEAT} component={SeatSelection} />
       <Stack.Screen name={SCREENS.MEDIA_LIBRARY} component={MediaLibrary} />

@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../assets/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,11 +40,7 @@ const styles = StyleSheet.create({
   dateSeparator: {
     width: 12,
   },
-  dateText: {
-    fontSize: 16,
-    lineHeight: 20,
-    fontWeight: '500',
-    color: colors.darkBlue,
+  dateHeading: {
     marginHorizontal: 20,
     marginTop: 94,
   },

@@ -30,7 +30,9 @@ const HallCard = ({
       />
       <Text style={styles.theatreCostText}>
         {Strings.FROM} <Text style={styles.priceText}>{50}$</Text> {Strings.OR}
-        <Text style={styles.priceText}>{2500}</Text> {Strings.BONUS}
+        <Text style={styles.priceText}>
+          {2500} {Strings.BONUS}
+        </Text>
       </Text>
     </View>
   );

@@ -1,2 +1,4 @@
 const leftDirectionArrow = require('./leftDirectionArrow.png');
-export {leftDirectionArrow};
+const whiteLeftDirectionArrow = require('./whiteLeftArrow.png');
+
+export {leftDirectionArrow, whiteLeftDirectionArrow};

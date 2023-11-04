@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import styles from './styles';
 import NavHeader from '../../components/NavHeader/NavHeader';
@@ -14,6 +14,10 @@ const THREATRE_NAME = 'The King’s Man';
 const Theatre = () => {
   const navigation = useNavigation<any>();
   const {bottom} = useSafeAreaInsets();
+  const [ticketInfo, setTicketInfo] = useState({
+    date: '',
+    theatre: '',
+  });
 
   const handleClickOnSelectDate = () => {
     navigation.navigate(SCREENS.SELECT_SEAT, {
@@ -22,7 +26,12 @@ const Theatre = () => {
     });
   };
 
-  const onSelectDateAndTheatre = () => {};
+  const onSelectDateAndTheatre = (date: string, theatre: string) => {
+    setTicketInfo({
+      date,
+      theatre,
+    });
+  };
 
   return (
     <View style={[styles.container, {paddingBottom: bottom}]}>

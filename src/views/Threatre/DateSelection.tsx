@@ -1,18 +1,29 @@
 import {View, Text, FlatList} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from '../SelectSeat/styles';
 import Strings from '../../utils/constants';
 import DateButton from '../../components/DateButton/DateButton';
 import HallCard from '../Threatre/components/HallCard/HallCard';
+import Heading from '../../components/Heading/Heading';
 
 const date = ['3 Mar', '4 Mar', '5 Mar', '6 Mar', '7 Mar'];
 const theatre = ['Cinetech + hall 1', 'Cinetech + hall 2'];
 
 const ItemSeparatorComponent = () => <View style={styles.dateSeparator} />;
 
-const DateSelection = ({onSelectDateAndTheatre}) => {
+interface Props {
+  onSelectDateAndTheatre: (date: string, theatre: string) => void;
+}
+
+const DateSelection = ({onSelectDateAndTheatre}: Props) => {
   const [selectedDate, setSelectedDate] = useState(date[0]);
   const [selectedThreatre, setSelectedThreatre] = useState(theatre[0]);
+  useEffect(() => {
+    if (selectedDate && selectedThreatre) {
+      onSelectDateAndTheatre(selectedDate, selectedThreatre);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedDate, selectedThreatre]);
 
   const renderDate = ({item}: {item: string}) => (
     <DateButton
@@ -35,7 +46,7 @@ const DateSelection = ({onSelectDateAndTheatre}) => {
 
   return (
     <View>
-      <Text style={styles.dateText}>{Strings.DATE}</Text>
+      <Heading textStyle={styles.dateHeading} value={Strings.DATE} />
       <FlatList
         data={date}
         renderItem={renderDate}
