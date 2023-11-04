@@ -45,9 +45,7 @@ const SeatRow = ({value, rIndex, group}) => {
   );
 };
 
-const SeatSelection = ({navigation, route}) => {
-  console.log(route);
-
+const SeatSelection = ({}) => {
   const renderSeatRow = (value, index, group) => {
     return <SeatRow rIndex={index} value={value} group={group} />;
   };

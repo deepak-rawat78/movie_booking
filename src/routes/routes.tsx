@@ -13,6 +13,7 @@ import Watch from '../views/Watch/Watch';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MovieDetail from '../views/MovieDetail/MovieDetail';
 import Theatre from '../views/Theatre/Theatre';
+import SelectSeat from '../views/SelectSeat/SelectSeat';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -56,6 +57,7 @@ const NavigatorRoutes = () => {
       <Stack.Screen name="tab" component={tabNavigator} />
       <Stack.Screen name={SCREENS.MOVIE_DETAIL} component={MovieDetail} />
       <Stack.Screen name={SCREENS.THEATRE} component={Theatre} />
+      <Stack.Screen name={SCREENS.SELECT_SEAT} component={SelectSeat} />
     </Stack.Navigator>
   );
 };

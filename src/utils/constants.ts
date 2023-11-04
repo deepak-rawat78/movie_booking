@@ -13,6 +13,7 @@ const Strings = {
   WATCH_TRAILER: 'Watch Trailer',
   GET_TICKETS: 'Get Tickets',
   WATCH: 'Watch',
+  PROCEED_TO_PAY: 'Proceed to pay',
 };
 
 export default Strings;
