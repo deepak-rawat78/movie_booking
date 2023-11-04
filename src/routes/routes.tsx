@@ -9,6 +9,7 @@ import {tabBarIcon} from './routesUtils';
 import colors from '../assets/colors';
 import styles from './styles';
 import {RouteProp} from '@react-navigation/native';
+import Watch from '../views/Watch/Watch';
 
 const Tab = createBottomTabNavigator();
 
