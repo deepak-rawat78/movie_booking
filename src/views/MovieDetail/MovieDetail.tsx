@@ -1,4 +1,4 @@
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Chip from './components/chip/Chip';
 import colors from '../../assets/colors';
@@ -9,6 +9,8 @@ import {playIcon, whiteLeftDirectionArrow} from '../../assets/png';
 import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import {useNavigation} from '@react-navigation/native';
+import SCREENS from '../../routes/screens';
 
 interface Props {}
 
@@ -25,7 +27,9 @@ const genres: GENRESTYPE[] = [
 ];
 
 const MovieDetail = ({}: Props) => {
+  const navigation = useNavigation<any>();
   const {top} = useSafeAreaInsets();
+  const goBack = () => navigation.goBack();
   const renderGenre = (item: GENRESTYPE) => {
     return (
       <Chip
@@ -36,11 +40,22 @@ const MovieDetail = ({}: Props) => {
     );
   };
 
+  const handleClickOnGetTicket = () => {
+    navigation.navigate(SCREENS.THEATRE);
+  };
+
   const handleClickOnWatchTrailer = () => {};
 
   return (
     <ScrollView bounces={false}>
-      <View style={[styles.topContainer, {paddingTop: top}]}>
+      <View style={[styles.topContainer]}>
+        <Image
+          source={{
+            uri: 'https://image.tmdb.org/t/p/w500/6o1jEuYRseIvVnJOGPHCDyW9Mr4.jpg',
+          }}
+          resizeMode="cover"
+          style={styles.movieImage}
+        />
         <LinearGradient
           colors={[colors.black2, colors.black3]}
           locations={[0, 0.8]}
@@ -51,14 +66,16 @@ const MovieDetail = ({}: Props) => {
           locations={[0.1, 0.8]}
           style={styles.bottomGradient}
         />
-        <View style={styles.navHeader}>
+
+        <TouchableOpacity
+          onPress={goBack}
+          style={[styles.navHeader, {marginTop: top}]}>
           <Image source={whiteLeftDirectionArrow} />
           <Text style={styles.navText}>{Strings.WATCH}</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.buttonContiner}>
           <CustomButton
-            icon={playIcon}
-            onPress={handleClickOnWatchTrailer}
+            onPress={handleClickOnGetTicket}
             title={Strings.GET_TICKETS}
             containerStyle={styles.getTicketButton}
           />

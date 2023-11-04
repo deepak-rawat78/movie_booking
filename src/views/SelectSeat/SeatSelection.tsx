@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './styles';
 import NavHeader from '../../components/NavHeader/NavHeader';
-import {MOVIE_NAME} from '../Threatre/Threatre';
+import {MOVIE_NAME} from '../Theatre/Theatre';
 
 enum SeatGroup {
   LEFT,
@@ -53,7 +53,6 @@ const SeatSelection = ({navigation, route}) => {
   };
   return (
     <View style={styles.arrangementContainer}>
-     
       <View>
         {sideData.map((value, index) =>
           renderSeatRow(value, index, SeatGroup.LEFT),

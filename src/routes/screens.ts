@@ -3,8 +3,9 @@ const SCREENS = {
   MEDIA_LIBRARY: 'MediaLibrary',
   MORE: 'More',
   WATCH: 'Watch',
-  THREATRE: 'Threatre',
+  THEATRE: 'Theatre',
   SELECT_SEAT: 'SelectSeat',
+  MOVIE_DETAIL: 'MovieDetail',
 };
 
 export default SCREENS;

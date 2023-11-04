@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from '../SelectSeat/styles';
 import Strings from '../../utils/constants';
 import DateButton from '../../components/DateButton/DateButton';
-import HallCard from '../Threatre/components/HallCard/HallCard';
+import HallCard from './components/HallCard/HallCard';
 import Heading from '../../components/Heading/Heading';
 import {Moment} from 'moment';
 import {getDate, getDateAndMonth, isDateEqual} from '../../utils/functions';

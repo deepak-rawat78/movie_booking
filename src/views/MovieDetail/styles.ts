@@ -71,6 +71,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 34,
   },
+  movieImage: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    top: 0,
+    bottom: 0,
+  },
 });
 
 export default styles;

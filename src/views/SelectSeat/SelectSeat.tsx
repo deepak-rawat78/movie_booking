@@ -4,7 +4,7 @@ import styles from './styles';
 import NavHeader from '../../components/NavHeader/NavHeader';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {MOVIE_NAME} from '../Threatre/Threatre';
+import {MOVIE_NAME} from '../Theatre/Theatre';
 
 const SelectSeat = () => {
   const {bottom} = useSafeAreaInsets();

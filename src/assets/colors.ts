@@ -3,8 +3,10 @@ const darkBlue = '#202C43';
 const white = '#FFFFFF';
 const white2 = '#EFEFEF';
 const white3 = '#F6F6FA';
+
 const grey1 = '#A6A6A61A';
 const grey2 = '#8F8F8F';
+const grey3 = '#2E27391A';
 
 const green2 = '#15D2BC';
 const pink2 = '#E26CA5';
@@ -36,4 +38,5 @@ export default {
   black3,
   purple3,
   black4,
+  grey3,
 };
