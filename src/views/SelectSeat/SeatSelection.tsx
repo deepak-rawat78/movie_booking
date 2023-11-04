@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './styles';
+import NavHeader from '../../components/NavHeader/NavHeader';
+import {MOVIE_NAME} from '../Threatre/Threatre';
 
 enum SeatGroup {
   LEFT,
@@ -43,12 +45,15 @@ const SeatRow = ({value, rIndex, group}) => {
   );
 };
 
-const SeatSelection = () => {
+const SeatSelection = ({navigation, route}) => {
+  console.log(route);
+
   const renderSeatRow = (value, index, group) => {
     return <SeatRow rIndex={index} value={value} group={group} />;
   };
   return (
     <View style={styles.arrangementContainer}>
+     
       <View>
         {sideData.map((value, index) =>
           renderSeatRow(value, index, SeatGroup.LEFT),

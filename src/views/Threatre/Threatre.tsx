@@ -3,30 +3,39 @@ import {View} from 'react-native';
 import styles from './styles';
 import NavHeader from '../../components/NavHeader/NavHeader';
 import Strings from '../../utils/constants';
-import DateSelection from './DateSelection';
+import DateSelection, {TheatreType} from './DateSelection';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useNavigation} from '@react-navigation/native';
 import SCREENS from '../../routes/screens';
+import {Moment} from 'moment';
+import {FULL_MONTH_NAME} from '../../utils/functions';
 
-const THREATRE_NAME = 'The King’s Man';
+export const MOVIE_NAME = 'The King’s Man';
 
 const Theatre = () => {
   const navigation = useNavigation<any>();
   const {bottom} = useSafeAreaInsets();
-  const [ticketInfo, setTicketInfo] = useState({
-    date: '',
-    theatre: '',
+  const [ticketInfo, setTicketInfo] = useState<{
+    date: Moment | null;
+    theatre: TheatreType | null;
+  }>({
+    date: null,
+    theatre: null,
   });
 
   const handleClickOnSelectDate = () => {
     navigation.navigate(SCREENS.SELECT_SEAT, {
-      theatreName: THREATRE_NAME,
-      otherInfoText: '',
+      theatreName: MOVIE_NAME,
+      otherInfoText: ticketInfo.date
+        ? `${
+            FULL_MONTH_NAME[ticketInfo.date?.get('M')]
+          } ${ticketInfo.date?.format(' d, YYYY')}`
+        : '',
     });
   };
 
-  const onSelectDateAndTheatre = (date: string, theatre: string) => {
+  const onSelectDateAndTheatre = (date: Moment, theatre: TheatreType) => {
     setTicketInfo({
       date,
       theatre,
@@ -36,7 +45,7 @@ const Theatre = () => {
   return (
     <View style={[styles.container, {paddingBottom: bottom}]}>
       <NavHeader
-        title={THREATRE_NAME}
+        title={MOVIE_NAME}
         secondaryTitle={'In theaters december 22, 2021'}
       />
       <View style={styles.contentContainer}>

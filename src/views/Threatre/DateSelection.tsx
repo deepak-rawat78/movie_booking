@@ -5,24 +5,15 @@ import Strings from '../../utils/constants';
 import DateButton from '../../components/DateButton/DateButton';
 import HallCard from '../Threatre/components/HallCard/HallCard';
 import Heading from '../../components/Heading/Heading';
-import moment, {Moment} from 'moment';
-import {getDateAndMonth, isDateEqual} from './functions';
+import {Moment} from 'moment';
+import {getDate, getDateAndMonth, isDateEqual} from '../../utils/functions';
 
-type TheatreType = {time: string; theatre: string; hall: string; id: number};
-const getDate = () => {
-  var startOfWeek = moment().startOf('month');
-  var endOfWeek = moment().endOf('month');
-
-  var days: Moment[] = [];
-  var day = startOfWeek;
-
-  while (day <= endOfWeek) {
-    days.push(day);
-    day = day.clone().add(1, 'd');
-  }
-  return days;
+export type TheatreType = {
+  time: string;
+  theatre: string;
+  hall: string;
+  id: number;
 };
-console.log(getDate());
 
 const date: Moment[] = getDate();
 const theatre: TheatreType[] = [
@@ -34,7 +25,7 @@ const theatre: TheatreType[] = [
 const ItemSeparatorComponent = () => <View style={styles.dateSeparator} />;
 
 interface Props {
-  onSelectDateAndTheatre: (date: string, theatre: string) => void;
+  onSelectDateAndTheatre: (date: Moment, theatre: TheatreType) => void;
 }
 
 const DateSelection = ({onSelectDateAndTheatre}: Props) => {
