@@ -5,9 +5,14 @@ import colors from '../../assets/colors';
 import Heading from '../../components/Heading/Heading';
 import styles from './styles';
 import Strings from '../../utils/constants';
-import {leftDirectionArrow, whiteLeftDirectionArrow} from '../../assets/png';
+import {
+  leftDirectionArrow,
+  playIcon,
+  whiteLeftDirectionArrow,
+} from '../../assets/png';
 import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import CustomButton from '../../components/CustomButton/CustomButton';
 
 interface Props {}
 type GENRESTYPE = {value: string; color: string};
@@ -30,6 +35,9 @@ const MovieDetail = ({}: Props) => {
       />
     );
   };
+
+  const handleClickOnWatchTrailer = () => {};
+
   return (
     <ScrollView bounces={false}>
       <View style={[styles.topContainer, {paddingTop: top}]}>
@@ -46,6 +54,20 @@ const MovieDetail = ({}: Props) => {
         <View style={styles.navHeader}>
           <Image source={whiteLeftDirectionArrow} />
           <Text style={styles.navText}>{Strings.WATCH}</Text>
+        </View>
+        <View style={styles.buttonContiner}>
+          <CustomButton
+            icon={playIcon}
+            onPress={handleClickOnWatchTrailer}
+            title={Strings.GET_TICKETS}
+            containerStyle={styles.getTicketButton}
+          />
+          <CustomButton
+            icon={playIcon}
+            onPress={handleClickOnWatchTrailer}
+            title={Strings.WATCH_TRAILER}
+            containerStyle={styles.watchButton}
+          />
         </View>
       </View>
       <View style={styles.detailContainer}>

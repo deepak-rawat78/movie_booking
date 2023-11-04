@@ -55,6 +55,22 @@ const styles = StyleSheet.create({
   topContainer: {
     height: 500,
   },
+  watchButton: {
+    backgroundColor: '#ffffff00',
+    borderWidth: 2,
+    borderColor: colors.blue,
+    width: 243,
+    marginTop: 10,
+  },
+  getTicketButton: {
+    width: 243,
+  },
+  buttonContiner: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingBottom: 34,
+  },
 });
 
 export default styles;
